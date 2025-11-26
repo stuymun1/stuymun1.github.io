@@ -1,1 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>StuyMUNC | Stuyvesant Model United Nations</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container navbar">
+      <div class="logo">STUY<span>MUN</span></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+
+          <li class="nav-item">
+            <a href="minimunc.html">miniMUNC</a>
+            <div class="dropdown">
+              <a href="minimunc-committees.html">Committees</a>
+              <a href="minimunc-schedule.html">Schedule</a>
+              <a href="minimunc-policies.html">Policies</a>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a href="stuymunc.html" class="active">StuyMUNC</a>
+            <div class="dropdown">
+              <a href="stuymunc-committees.html">Committees</a>
+              <a href="stuymunc-schedule.html">Schedule</a>
+              <a href="stuymunc-policies.html">Policies</a>
+            </div>
+          </li>
+
+          <li><a href="awards.html">Awards</a></li>
+          <li><a href="gallery.html">Photo Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="more.html">More</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-tag">
+          <span class="hero-tag-dot"></span>
+          Spring Flagship Conference
+        </div>
+        <h1>StuyMUNC</h1>
+        <p class="hero-subtitle">
+          StuyMUNC is Stuyvesant High School's spring conference that typically
+          occurs toward the end of April. Designed for both novices and experienced
+          delegates, StuyMUNC offers a variety of General Assembly, Specialized,
+          Crisis, and JCC committees with thought-provoking, divisive topics.
+        </p>
+        <div class="hero-meta">
+          <span><strong>StuyMUNC 2025</strong> · Date TBA</span>
+          <span><strong>Location</strong> · Stuyvesant High School</span>
+        </div>
+        <div class="btn-row">
+          <a href="#" class="btn btn-primary">School Registration (Coming Soon)</a>
+          <a href="#" class="btn">Chair Applications (Coming Soon)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- overview cards -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Conference Overview</h2>
+          <p class="section-subtitle">
+            StuyMUNC is our larger, more advanced conference with committees
+            spanning a wide range of difficulty and formats for delegates across
+            the circuit.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-meta">COMMITTEES</div>
+            <h3>Committee Lineup</h3>
+            <p>
+              From GA to Crisis to Joint Crisis Committees, see the full slate
+              of committees, dais members, and background guides.
+            </p>
+            <div class="btn-row" style="margin-top: 0.9rem;">
+              <a href="stuymunc-committees.html" class="btn">View Committees</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-meta">SCHEDULE</div>
+            <h3>Conference Schedule</h3>
+            <p>
+              Learn more about the timing of registration, opening and closing
+              ceremonies, as well as committee sessions and breaks.
+            </p>
+            <div class="btn-row" style="margin-top: 0.9rem;">
+              <a href="stuymunc-schedule.html" class="btn">View Schedule</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-meta">POLICIES</div>
+            <h3>Policies & Procedures</h3>
+            <p>
+              Review conduct guidelines, dress code, plagiarism policy, and
+              awards criteria to ensure a professional, fair conference.
+            </p>
+            <div class="btn-row" style="margin-top: 0.9rem;">
+              <a href="stuymunc-policies.html" class="btn">View Policies</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact strip -->
+    <section>
+      <div class="container">
+        <div class="contact-card">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-subtitle">
+            QUESTIONS? Please email us with any concerns regarding registration,
+            committees, or logistics.
+          </p>
+          <p style="margin-top: 0.8rem;">
+            Email:
+            <a href="mailto:stuyvesanthsmodelun@gmail.com">
+              stuyvesanthsmodelun@gmail.com
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>© <span id="year"></span> StuyMUN. All rights reserved.</div>
+      <div>StuyMUNC · Stuyvesant High School</div>
+    </div>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
 
