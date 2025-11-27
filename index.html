@@ -154,12 +154,11 @@ margin-top: 30px;
 
 
 .team-card {
-padding: 20px;
-background: var(--card-bg-light);
-border-radius: 10px;
-text-align: center;
-box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-transition: transform var(--transition), box-shadow var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 480px; /* adjust if needed */
 }
 
 
@@ -176,11 +175,10 @@ box-shadow: 0 6px 16px rgba(0,0,0,0.08);
 
 
 .team-photo {
-width: 100%;
-height: 200px;
-object-fit: cover;
-border-radius: 8px;
-border: 1px solid #ddd;
+  width: 100%;
+  height: 200px;   /* makes them the same height */
+  object-fit: cover;
+  border-radius: 20px;
 }
 
 
@@ -272,14 +270,15 @@ background: #2f80c9; /* medium blue card */
 
 /* MATCHING IMAGE FRAME STYLE */
 .team-photo-wrapper {
-width: 100%;
-max-width: 260px;
-margin: 0 auto;
-padding: 12px;
-border-radius: 25px;
-background: var(--frame);
+  width: 240px;
+  height: 220px; /* consistent frame */
+  padding: 12px;
+  border-radius: 25px;
+  background: var(--frame);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 
 .team-photo {
 width: 100%;
