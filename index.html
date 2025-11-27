@@ -5,372 +5,434 @@
   <title>Stuyvesant Model United Nations | Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- GOOGLE FONT -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
-
+  <!-- INLINE CSS SO IT DEFINITELY APPLIES -->
   <style>
-    :root {
-      --blue: #0a5adf;
-      --light-bg: #f6f8fa;
-      --dark-bg: #111418;
-      --light-text: #1a1a1a;
-      --dark-text: #e5e5e5;
-      --card-bg-light: #ffffff;
-      --card-bg-dark: #1b1f24;
-      --transition: 0.25s ease;
-    }
-
-    body.dark {
-      background: var(--dark-bg);
-      color: var(--dark-text);
-    }
-
-    body.dark .site-header {
-      background: #000000aa;
-      border-color: #333;
-    }
-
-    body.dark .nav-menu a {
-      color: #ccc;
-    }
-
-    body.dark .nav-menu a.active {
-      color: var(--blue);
-    }
-
-    body.dark .team-card,
-    body.dark .site-footer {
-      color: #ddd;
-    }
-
-    body.dark .team-photo {
-      border-color: #333;
-    }
-
-    body.dark .contact-text a {
-      color: var(--blue);
-    }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    body {
-      font-family: "Inter", sans-serif;
-      background: var(--light-bg);
-      color: var(--light-text);
-      transition: background var(--transition), color var(--transition);
+    html, body {
+      height: 100%;
     }
 
-    img {
-      user-select: none;
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: #ffffff;
+      color: #222222;
+      line-height: 1.6;
+    }
+
+    .wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     .container {
-      max-width: 1100px;
-      padding: 0 20px;
-      margin: auto;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 16px;
     }
 
+    /* HEADER + NAV */
+
     .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: #ffffffcc;
-      backdrop-filter: blur(10px);
       border-bottom: 1px solid #e5e5e5;
-      transition: var(--transition);
+      background: #ffffff;
     }
 
     .navbar {
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items: center;
-      padding: 12px 0;
-      gap: 20px;
-    }
-
-    .left-group {
-      display: flex;
-      align-items: center;
-      gap: 18px;
+      padding: 10px 0;
     }
 
     .logo-text {
-      font-size: 16px;
       font-weight: 700;
       letter-spacing: 0.12em;
+      font-size: 13px;
+      text-transform: uppercase;
     }
 
     .logo-text span {
-      color: var(--blue);
+      color: #0072ce;
     }
 
     .nav-menu {
-      display: flex;
-      gap: 22px;
       list-style: none;
-      align-items: center;
+      display: flex;
+      gap: 18px;
+      font-size: 13px;
     }
 
     .nav-menu a {
       text-decoration: none;
-      color: var(--light-text);
-      font-weight: 500;
-      transition: var(--transition);
+      color: #333333;
     }
 
-    .nav-menu a:hover {
-      color: var(--blue);
+    .nav-menu a:hover,
+    .nav-menu a.active {
+      text-decoration: underline;
     }
 
-    .active {
-      color: var(--blue);
-      font-weight: 600;
-    }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-    }
-
-    .hamburger div {
-      width: 24px;
-      height: 3px;
-      background: var(--light-text);
-      transition: var(--transition);
-    }
-
-    body.dark .hamburger div {
-      background: var(--dark-text);
-    }
-
-    @media (max-width: 760px) {
-      .nav-menu {
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        background: var(--card-bg-light);
-        flex-direction: column;
-        padding: 16px;
-        border-radius: 6px;
-        border: 1px solid #ddd;
-        display: none;
-      }
-
-      body.dark .nav-menu {
-        background: var(--card-bg-dark);
-        border-color: #333;
-      }
-
-      .nav-menu.open {
-        display: flex;
-        animation: fadeIn 0.25s ease;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    /* HERO IMAGE */
 
     .hero {
-      position: relative;
-      margin-top: 20px;
-      animation: fadeIn 0.7s ease;
+      margin-bottom: 28px;
     }
 
-    .hero img {
+    .hero-image-wrapper img {
+      display: block;
       width: 100%;
-      height: 430px;
-      object-fit: cover;
-      border-radius: 10px;
+      height: auto;
     }
 
-    .overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
-      border-radius: 10px;
-    }
+    /* MAIN CONTENT */
 
-    .hero-text {
-      position: absolute;
-      bottom: 30px;
-      left: 30px;
-      color: white;
-      text-shadow: 0 4px 12px rgba(0,0,0,0.7);
-    }
-
-    .hero-text h1 {
-      font-size: 42px;
-      font-weight: 700;
-      animation: fadeIn 1s ease;
+    .main-content {
+      flex: 1;
+      padding: 22px 0 40px;
     }
 
     .section {
-      margin: 60px 0;
-      animation: fadeIn 0.6s ease;
+      margin-bottom: 28px;
     }
 
     .section-title {
+      font-size: 22px;
+      font-weight: 600;
       text-align: center;
-      font-size: 30px;
-      font-weight: 700;
       margin-bottom: 8px;
     }
 
-    .section-subtitle {
+    .home-subheadline {
       text-align: center;
-      font-size: 14px;
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .info-label {
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
+      color: #777777;
+      margin-top: 6px;
+    }
+
+    .section-subtitle {
+      text-transform: uppercase;
+      font-size: 13px;
       letter-spacing: 0.18em;
-      color: #555;
+      text-align: center;
+      margin-bottom: 8px;
+      color: #555555;
     }
 
     .text-block {
-      max-width: 780px;
-      margin: auto;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 14px;
       text-align: center;
-      font-size: 16px;
     }
 
     .text-block p + p {
-      margin-top: 12px;
+      margin-top: 8px;
     }
+
+    /* TEAM GRID */
 
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 22px;
+      margin-top: 8px;
     }
 
     .team-card {
-      padding: 20px;
-      background: var(--card-bg-light);
-      border-radius: 10px;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      transition: transform var(--transition), box-shadow var(--transition);
+      font-size: 13px;
     }
 
-    body.dark .team-card {
-      background: var(--card-bg-dark);
-      box-shadow: none;
+    .team-role {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #555555;
+      line-height: 1.4;
     }
 
-    .team-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    .team-name {
+      font-weight: 600;
+      margin-top: 8px;
+      font-size: 13px;
     }
 
     .team-photo {
       width: 100%;
-      height: 200px;
+      max-width: 160px;
+      height: auto;
+      border-radius: 3px;
       object-fit: cover;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-    }
-
-    .team-role {
-      margin-top: 10px;
-      font-size: 12px;
-      text-transform: uppercase;
-      color: #555;
-    }
-
-    .team-name {
-      font-size: 16px;
-      font-weight: 600;
       margin-top: 6px;
+    }
+
+    /* CONTACT BLOCK */
+
+    .contact-section {
+      border-top: 1px solid #e5e5e5;
+      padding-top: 22px;
+      margin-top: 12px;
+    }
+
+    .contact-heading {
+      font-size: 19px;
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .contact-subtitle {
+      font-size: 13px;
+      text-align: center;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
     }
 
     .contact-text {
       text-align: center;
-      margin-top: 14px;
+      font-size: 13px;
     }
+
+    .contact-text a {
+      color: #0072ce;
+    }
+
+    /* FOOTER */
 
     .site-footer {
-      text-align: center;
-      padding: 25px;
-      font-size: 13px;
-      color: #666;
-      border-top: 1px solid #ddd;
-      margin-top: 50px;
-      transition: var(--transition);
+      border-top: 1px solid #e5e5e5;
+      padding: 10px 0 18px;
+      font-size: 11px;
+      color: #777777;
     }
 
-    body.dark .site-footer {
-      color: #aaa;
-      border-color: #333;
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
-    .mode-toggle {
-      cursor: pointer;
-      font-size: 14px;
-      padding: 6px 10px;
-      border-radius: 6px;
-      background: var(--blue);
-      color: white;
-      border: none;
-      transition: var(--transition);
+    /* RESPONSIVE */
+
+    @media (max-width: 680px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+
+      .text-block {
+        text-align: left;
+      }
     }
   </style>
 </head>
-
 <body>
-  <header class="site-header">
-    <div class="container navbar">
+  <div class="wrapper">
 
-      <!-- TEAM SECTION WITH PLACEHOLDER PHOTOS -->
-      <section class="section" id="team">
-        <h2 class="section-title">Executive Board</h2>
-        <p class="section-subtitle">2024 - 2025</p>
-
-        <div class="team-grid">
-          <!-- Placeholder Card 1 -->
-          <div class="team-card">
-            <img src="images/placeholder1.jpg" class="team-photo" alt="Team Member Photo" />
-            <div class="team-role">Secretary General</div>
-            <div class="team-name">Name Here</div>
-          </div>
-
-          <!-- Placeholder Card 2 -->
-          <div class="team-card">
-            <img src="images/placeholder2.jpg" class="team-photo" alt="Team Member Photo" />
-            <div class="team-role">Deputy Secretary General</div>
-            <div class="team-name">Name Here</div>
-          </div>
-
-          <!-- Placeholder Card 3 -->
-          <div class="team-card">
-            <img src="images/placeholder3.jpg" class="team-photo" alt="Team Member Photo" />
-            <div class="team-role">Under-Secretary General</div>
-            <div class="team-name">Name Here</div>
-          </div>
-
-          <!-- Placeholder Card 4 -->
-          <div class="team-card">
-            <img src="images/placeholder4.jpg" class="team-photo" alt="Team Member Photo" />
-            <div class="team-role">Director of Operations</div>
-            <div class="team-name">Name Here</div>
-          </div>
+    <!-- HEADER / NAV -->
+    <header class="site-header">
+      <div class="container navbar">
+        <div class="logo-text">
+          STUY<span>MUN</span>
         </div>
-      </section>
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="index.html" class="active">HOME</a></li>
+            <li><a href="minimunc.html">MINIMUNC</a></li>
+            <li><a href="stuymunc.html">STUYMUNC</a></li>
+            <li><a href="awards.html">AWARDS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="gallery.html">PHOTO GALLERY</a></li>
+            <li><a href="more.html">More</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO IMAGE -->
+    <section class="hero">
+      <div class="container hero-image-wrapper">
+        <!-- if you don't have this yet, you can leave it or use a placeholder -->
+        <img src="images/home-hero.jpg" alt="StuyMUN hero" />
+      </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <div class="container">
+
+        <!-- Title + date -->
+        <section class="section">
+          <h1 class="section-title">Stuyvesant Model United Nations</h1>
+          <p class="home-subheadline">miniMUNC 2025: November 8th</p>
+          <div class="info-label">INFO</div>
+        </section>
+
+        <!-- WHO WE ARE -->
+        <section class="section">
+          <div class="section-subtitle">WHO WE ARE</div>
+          <div class="text-block">
+            <p>
+              StuyMUN is Stuyvesant High School&#39;s Model United Nations team.
+              We are student-run and provide a community for students interested
+              in public speaking, diplomacy, and international affairs.
+            </p>
+            <p>
+              Each year we attend local and collegiate conferences across the Northeast
+              and host two conferences of our own: miniMUNC in the fall and StuyMUNC
+              in the spring.
+            </p>
+          </div>
+        </section>
+
+        <!-- OUR TEAM -->
+        <section class="section">
+          <div class="section-subtitle">OUR TEAM</div>
+
+          <div class="team-grid">
+            <article class="team-card">
+              <div class="team-role">SECRETARY<br />GENERAL</div>
+              <img src="images/sec-gen.jpg" alt="Secretary-General" class="team-photo" />
+              <div class="team-name">ALEXANDER PANAS</div>
+            </article>
+
+            <article class="team-card">
+              <div class="team-role">USG OF<br />PERSONNEL</div>
+              <img src="images/usg-personnel-1.jpg" alt="USG of Personnel" class="team-photo" />
+              <div class="team-name">AENEAS MERCHANT</div>
+            </article>
+
+            <article class="team-card">
+              <div class="team-role">USG OF<br />PERSONNEL</div>
+              <img src="images/usg-personnel-2.jpg" alt="USG of Personnel" class="team-photo" />
+              <div class="team-name">NIRVAN MULCHANDANI</div>
+            </article>
+
+            <article class="team-card">
+              <div class="team-role">USG OF<br />ADMINISTRATION</div>
+              <img src="images/usg-admin.jpg" alt="USG of Administration" class="team-photo" />
+              <div class="team-name">CELISE LIN</div>
+            </article>
+
+            <article class="team-card">
+              <div class="team-role">DIRECTOR<br />GENERAL</div>
+              <img src="images/dg-1.jpg" alt="Director-General" class="team-photo" />
+              <div class="team-name">RENAE LEUNG</div>
+            </article>
+
+            <article class="team-card">
+              <div class="team-role">DIRECTOR<br />GENERAL</div>
+              <img src="images/dg-2.jpg" alt="Director-General" class="team-photo" />
+              <div class="team-name">AHANA CHANDRA</div>
+            </article>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="section contact-section">
+          <div class="contact-heading">CONTACT</div>
+          <div class="contact-subtitle">QUESTIONS?</div>
+          <div class="contact-text">
+            <p>
+              Send us an email at
+              <a href="mailto:stuyvesanthsmodelun@gmail.com">stuyvesanthsmodelun@gmail.com</a>!
+            </p>
+            <p>345 Chambers Street, New York, NY, 10282</p>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>© 2025 by StuyMUN.</div>
+        <div>Hosted with GitHub Pages.</div>
+      </div>
+    </footer>
+<meta charset="UTF-8" />
+<title>Stuyvesant Model United Nations | Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 
+<style>
+/* GLOBAL RESETS */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+background: #f9fafb;
+color: #222;
+line-height: 1.6;
+}
+.container {
+width: 100%;
+max-width: 1100px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+
+/* HEADER + NAV */
+.site-header {
+background: #ffffffcc;
+backdrop-filter: blur(8px);
+position: sticky;
+top: 0;
+z-index: 50;
+border-bottom: 1px solid #e5e5e5;
+}
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 14px 0;
+}
+.logo-text {
+font-weight: 700;
+letter-spacing: 0.12em;
+font-size: 14px;
+}
+.logo-text span { color: #0072ce; }
+.nav-menu {
+list-style: none;
+display: flex;
+gap: 20px;
+font-size: 14px;
+}
+.nav-menu a {
+text-decoration: none;
+color: #333;
+padding: 6px 0;
+transition: 0.2s ease;
+}
+.nav-menu a:hover { color: #0072ce; }
+.nav-menu .active { color: #0072ce; font-weight: 600; }
+
+
+/* HERO */
+.hero {
+position: relative;
+}
+.hero img {
+</html>
+
+  </div>
+</body>
