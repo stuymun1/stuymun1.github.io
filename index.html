@@ -1,338 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Stuyvesant Model United Nations | Home</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<title>Stuyvesant Model United Nations | Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- GOOGLE FONT -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
-  <style>
-    :root {
-      --blue: #0a5adf;
-      --light-bg: #f6f8fa;
-      --dark-bg: #111418;
-      --light-text: #1a1a1a;
-      --dark-text: #e5e5e5;
-      --card-bg-light: #ffffff;
-      --card-bg-dark: #1b1f24;
-      --transition: 0.25s ease;
-    }
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
-    body.dark {
-      background: var(--dark-bg);
-      color: var(--dark-text);
-    }
 
-    body.dark .site-header {
-      background: #000000aa;
-      border-color: #333;
-    }
+<style>
+:root {
+--blue: #0a5adf;
+--light-bg: #f6f8fa;
+--dark-bg: #111418;
+--light-text: #1a1a1a;
+--dark-text: #e5e5e5;
+--card-bg-light: #ffffff;
+--card-bg-dark: #1b1f24;
+--transition: 0.25s ease;
+}
 
-    body.dark .nav-menu a {
-      color: #ccc;
-    }
 
-    body.dark .nav-menu a.active {
-      color: var(--blue);
-    }
+body.dark {
+background: var(--dark-bg);
+color: var(--dark-text);
+}
 
-    body.dark .team-card,
-    body.dark .site-footer {
-      color: #ddd;
-    }
 
-    body.dark .team-photo {
-      border-color: #333;
-    }
+body.dark .site-header {
+background: #000000aa;
+border-color: #333;
+}
 
-    body.dark .contact-text a {
-      color: var(--blue);
-    }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+body.dark .nav-menu a {
+color: #ccc;
+}
 
-    body {
-      font-family: "Inter", sans-serif;
-      background: var(--light-bg);
-      color: var(--light-text);
-      transition: background var(--transition), color var(--transition);
-    }
 
-    img {
-      user-select: none;
-    }
+body.dark .nav-menu a.active {
+color: var(--blue);
+}
 
-    .container {
-      max-width: 1100px;
-      padding: 0 20px;
-      margin: auto;
-    }
 
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: #ffffffcc;
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #e5e5e5;
-      transition: var(--transition);
-    }
+body.dark .team-card,
+body.dark .site-footer {
+color: #ddd;
+}
 
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 0;
-      gap: 20px;
-    }
 
-    .left-group {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
+body.dark .team-photo {
+border-color: #333;
+}
 
-    .logo-text {
-      font-size: 16px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-    }
 
-    .logo-text span {
-      color: var(--blue);
-    }
+body.dark .contact-text a {
+color: var(--blue);
+}
 
-    .nav-menu {
-      display: flex;
-      gap: 22px;
-      list-style: none;
-      align-items: center;
-    }
 
-    .nav-menu a {
-      text-decoration: none;
-      color: var(--light-text);
-      font-weight: 500;
-      transition: var(--transition);
-    }
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
 
-    .nav-menu a:hover {
-      color: var(--blue);
-    }
 
-    .active {
-      color: var(--blue);
-      font-weight: 600;
-    }
+body {
+font-family: "Inter", sans-serif;
+background: var(--light-bg);
+color: var(--light-text);
+transition: background var(--transition), color var(--transition);
+}
 
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-    }
 
-    .hamburger div {
-      width: 24px;
-      height: 3px;
-      background: var(--light-text);
-      transition: var(--transition);
-    }
+img {
+user-select: none;
+}
 
-    body.dark .hamburger div {
-      background: var(--dark-text);
-    }
 
-    @media (max-width: 760px) {
-      .nav-menu {
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        background: var(--card-bg-light);
-        flex-direction: column;
-        padding: 16px;
-        border-radius: 6px;
-        border: 1px solid #ddd;
-        display: none;
-      }
+.container {
+max-width: 1100px;
+padding: 0 20px;
+margin: auto;
+}
 
-      body.dark .nav-menu {
-        background: var(--card-bg-dark);
-        border-color: #333;
-      }
 
-      .nav-menu.open {
-        display: flex;
-        animation: fadeIn 0.25s ease;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .hero {
-      position: relative;
-      margin-top: 20px;
-      animation: fadeIn 0.7s ease;
-    }
-
-    .hero img {
-      width: 100%;
-      height: 430px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-
-    .overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
-      border-radius: 10px;
-    }
-
-    .hero-text {
-      position: absolute;
-      bottom: 30px;
-      left: 30px;
-      color: white;
-      text-shadow: 0 4px 12px rgba(0,0,0,0.7);
-    }
-
-    .hero-text h1 {
-      font-size: 42px;
-      font-weight: 700;
-      animation: fadeIn 1s ease;
-    }
-
-    .section {
-      margin: 60px 0;
-      animation: fadeIn 0.6s ease;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 30px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: #555;
-    }
-
-    .text-block {
-      max-width: 780px;
-      margin: auto;
-      text-align: center;
-      font-size: 16px;
-    }
-
-    .text-block p + p {
-      margin-top: 12px;
-    }
-
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .team-card {
-      padding: 20px;
-      background: var(--card-bg-light);
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-
-    body.dark .team-card {
-      background: var(--card-bg-dark);
-      box-shadow: none;
-    }
-
-    .team-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-    }
-
-    .team-photo {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-    }
-
-    .team-role {
-      margin-top: 10px;
-      font-size: 12px;
-      text-transform: uppercase;
-      color: #555;
-    }
-
-    .team-name {
-      font-size: 16px;
-      font-weight: 600;
-      margin-top: 6px;
-    }
-
-    .contact-text {
-      text-align: center;
-      margin-top: 14px;
-    }
-
-    .site-footer {
-      text-align: center;
-      padding: 25px;
-      font-size: 13px;
-      color: #666;
-      border-top: 1px solid #ddd;
-      margin-top: 50px;
-      transition: var(--transition);
-    }
-
-    body.dark .site-footer {
-      color: #aaa;
-      border-color: #333;
-    }
-
-    .mode-toggle {
-      cursor: pointer;
-      font-size: 14px;
-      padding: 6px 10px;
-      border-radius: 6px;
-      background: var(--blue);
-      color: white;
-      border: none;
-      transition: var(--transition);
-    }
-  </style>
-</head>
-
-<body>
-  <header class="site-header">
-    <div class="container navbar">
+.site-header {
+position: sticky;
+top: 0;
+z-index: 100;
+background: #ffffffcc;
+backdrop-filter: blur(10px);
